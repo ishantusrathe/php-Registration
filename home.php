@@ -5,13 +5,13 @@ session_start();
 
 if(isset($_SESSION["uname"])==true)
 {
-	
+
 	 $unm=$_SESSION["uname"];
 	 $qry="select * from register  left join categaries on register.reg_catid=categaries.cat_id where reg_unm='$unm'";
 	 $res=mysqli_query($con,$qry);
 
-	
-	
+
+
 	?>
 <!doctype html>
 <html lang="en">
@@ -27,7 +27,7 @@ if(isset($_SESSION["uname"])==true)
 
  <div class="modal fade" id="myModal3" role="dialog">
     <div class="modal-dialog">
-    
+
       <!-- Modal content-->
       <div class="modal-content">
         <div class="modal-header">
@@ -39,33 +39,33 @@ if(isset($_SESSION["uname"])==true)
 		  <table class="table table-border-stripd">
            <thead>
 		  <tr>
-		  <th>Subject</th>
+		  <th>Subject namae</th>
 		  <th>Description</th>
 		  <th>Image</th>
 		  <th>Time</th>
           </tr>
           </thead>
 		  <tbody id="change">
-		  
-		  
+
+
 		  </tbody>
 </table>
-		  
+
 		  </div>
         </div>
         <div class="modal-footer">
-		
+
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         </div>
       </div>
-      
+
     </div>
   </div>
-  
-  
+
+
   <div class="modal fade" id="myModal2" role="dialog">
     <div class="modal-dialog">
-    
+
       <!-- Modal content-->
       <div class="modal-content">
         <div class="modal-header">
@@ -94,7 +94,7 @@ if(isset($_SESSION["uname"])==true)
 <input type="hidden" name="hide" id="hide" value="<?php echo $unm ?>">
 </tr>
 </table>
-		  
+
 		  </div>
         </div>
         <div class="modal-footer">
@@ -102,12 +102,12 @@ if(isset($_SESSION["uname"])==true)
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         </div>
       </div>
-      
+
     </div>
   </div>
-  
-  
-  
+
+
+
 
 
 
@@ -157,11 +157,11 @@ while($row=mysqli_fetch_array($res))
 </html>
 
 
-<?php	
+<?php
 }
 else
 {
-header("Location:login.php");	
+header("Location:login.php");
 }
 
 
@@ -176,12 +176,12 @@ function submitmail()
 	var unm=$('#unm').val();
 	var mail=$('#mail').val();
 	var desc=$('#desc').val();
-	
+
 	form_data.append("file",prop);
 	form_data.append("unm",unm);
 	form_data.append("mail",mail);
 	form_data.append("desc",desc);
-	
+
 	$.ajax({
 	        type: 'POST',
             url: 'compose.php',
@@ -193,21 +193,21 @@ function submitmail()
 			{
 				alert(result);
 			}
-	
-	
+
+
 	});
-	
+
 }
 </script>
 
 <script>
-$(document).ready(function() 
+$(document).ready(function()
 {
 	//lert("Hello");
 	var hide =$('#hide').val();
 	//alert(hide);
 	$.ajax({
-		
+
 		type: 'POST',
 		url : 'datacount.php',
 		data:{hide:hide},
@@ -215,13 +215,13 @@ $(document).ready(function()
 		{
 			//alert(result);
 			$('#couu').html(result)+ "yourmail";
-			
+
 		}
-		
-		
-		
+
+
+
 	});
-	
+
 });
 </script>
 
@@ -235,13 +235,13 @@ function readmail()
 		data: {hide:hide},
 		success:function(result)
 		{
-		 // alert(result);	
+		 // alert(result);
 			$('#change').html(result);
 		}
-		
-		
+
+
 	});
-	
+
 }
 
 </script>
