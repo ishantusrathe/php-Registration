@@ -1,0 +1,11 @@
+1) Hello guys I am ishant usrathe and today i am upload basic php registartion code with login system.
+2) Here i am use php 5 funcinality and with mysqli.
+3)front end I am use bootstarp css file and jquery.
+And this code i am also upload Registration form with oop's Concept so if you want to learn basic concept so download the folder and 
+4)configure all basic setting.
+
+I hope you are enjoying this code .
+
+Thanks
+
+
